@@ -2,6 +2,8 @@ package com.anwesome.ui.orbitviewlist;
 
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
 
@@ -27,6 +29,18 @@ public class OrbitList {
     public void show() {
         if(!isShown) {
             activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+            if(activity instanceof AppCompatActivity) {
+                ActionBar actionBar = ((AppCompatActivity) activity).getSupportActionBar();
+                if(actionBar!=null) {
+                    actionBar.hide();
+                }
+            }
+            else {
+                android.app.ActionBar actionBar = activity.getActionBar();
+                if(actionBar != null) {
+                    actionBar.hide();
+                }
+            }
             activity.setContentView(scrollView);
             isShown = true;
         }
