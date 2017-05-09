@@ -87,7 +87,7 @@ public class OrbitView extends View {
             if(scale<0) {
                 scale = 0;
                 dir = 0;
-                if(totalScale <= 0 && onFillChangeLister!=null) {
+                if(totalScale == 1 && onFillChangeLister!=null) {
                     onFillChangeLister.onUnFill();
                 }
             }
