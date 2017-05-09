@@ -87,7 +87,7 @@ public class OrbitView extends View {
             return dir == 0;
         }
         public boolean handleTap(float x,float y) {
-            boolean condition =  x>=this.x-r && x<=this.x+r && y>=this.y -r && y <= this.y+r;
+            boolean condition =  x>=this.x-3*r/2 && x<=this.x+3*r/2 && y>=this.y - 3*r/2 && y <= this.y+3*r/2;
             if(condition) {
                 dir = scale == 1?-1:1;
             }
