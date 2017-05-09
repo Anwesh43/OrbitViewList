@@ -14,6 +14,7 @@ public class OrbitGridLayout extends ViewGroup {
     private int w,h;
     public OrbitGridLayout(Context context) {
         super(context);
+        initDimension(context);
     }
     public void initDimension(Context context) {
         DisplayManager displayManager = (DisplayManager)context.getSystemService(Context.DISPLAY_SERVICE);

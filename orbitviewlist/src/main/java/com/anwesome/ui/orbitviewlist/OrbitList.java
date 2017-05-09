@@ -16,7 +16,7 @@ public class OrbitList {
         this.activity = activity;
         this.orbitGridLayout = new OrbitGridLayout(activity);
         this.scrollView = new ScrollView(activity);
-        orbitGridLayout.addView(scrollView,new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        scrollView.addView(orbitGridLayout,new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
     }
     public void addOrbit() {
         if(!isShown) {
