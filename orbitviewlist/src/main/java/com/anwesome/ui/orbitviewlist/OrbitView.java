@@ -54,11 +54,12 @@ public class OrbitView extends View {
     private class OrbitElement {
         private float x,y,r,scale=0,dir = 0;
         public OrbitElement(int deg) {
-            r = w/20;
+            r = w/16;
             x = w/2 + (float)(w/3*Math.cos(deg*(Math.PI/180)));
             y = h/2 +(float)(w/3*Math.sin(deg*(Math.PI/180)));
         }
         public void draw(Canvas canvas,Paint paint) {
+            paint.setStrokeWidth(r/5);
             canvas.save();
             canvas.translate(x,y);
             paint.setStyle(Paint.Style.STROKE);
