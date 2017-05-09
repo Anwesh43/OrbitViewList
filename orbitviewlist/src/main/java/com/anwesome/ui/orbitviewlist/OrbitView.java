@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -87,7 +88,8 @@ public class OrbitView extends View {
             if(scale<0) {
                 scale = 0;
                 dir = 0;
-                if(totalScale == 1 && onFillChangeLister!=null) {
+                Log.d("totalFilled",""+totalScale);
+                if(Math.floor(totalScale) <= 0 && onFillChangeLister!=null) {
                     onFillChangeLister.onUnFill();
                 }
             }
