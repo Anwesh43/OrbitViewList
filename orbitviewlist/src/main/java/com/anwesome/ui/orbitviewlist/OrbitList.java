@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ScrollView;
 
 /**
@@ -41,6 +42,7 @@ public class OrbitList {
                     actionBar.hide();
                 }
             }
+            activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
             activity.setContentView(scrollView);
             isShown = true;
         }
