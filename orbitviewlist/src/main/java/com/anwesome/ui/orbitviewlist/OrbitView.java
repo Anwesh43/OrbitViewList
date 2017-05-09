@@ -16,6 +16,10 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 public class OrbitView extends View {
     private int w,h,time = 0;
     private float totalScale = 0;
+    private OnFillChangeLister onFillChangeLister;
+    public void setOnFillChangeLister(OnFillChangeLister onFillChangeLister) {
+        this.onFillChangeLister = onFillChangeLister;
+    }
     private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private AnimationController animationController = new AnimationController();
     private ConcurrentLinkedQueue<OrbitElement> orbitElements = new ConcurrentLinkedQueue<>();
@@ -76,10 +80,16 @@ public class OrbitView extends View {
             if(scale> 1) {
                 dir = 0;
                 scale = 1;
+                if(totalScale >= orbitElements.size() && onFillChangeLister!=null) {
+                    onFillChangeLister.onFill();
+                }
             }
             if(scale<0) {
                 scale = 0;
                 dir = 0;
+                if(totalScale <= orbitElements.size() && onFillChangeLister!=null) {
+                    onFillChangeLister.onUnFill();
+                }
             }
 
         }

@@ -26,8 +26,9 @@ public class OrbitGridLayout extends ViewGroup {
             h = size.y;
         }
     }
-    public void addOrbit() {
+    public void addOrbit(OnFillChangeLister onFillChangeLister) {
         OrbitView orbitView = new OrbitView(getContext());
+        orbitView.setOnFillChangeLister(onFillChangeLister);
         addView(orbitView,new LayoutParams(2*w/5,w*w/5));
         requestLayout();
     }

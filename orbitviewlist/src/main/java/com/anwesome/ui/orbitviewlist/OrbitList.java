@@ -22,9 +22,9 @@ public class OrbitList {
         this.scrollView = new ScrollView(activity);
         scrollView.addView(orbitGridLayout,new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
     }
-    public void addOrbit() {
+    public void addOrbit(OnFillChangeLister onFillChangeLister) {
         if(!isShown) {
-            orbitGridLayout.addOrbit();
+            orbitGridLayout.addOrbit(onFillChangeLister);
         }
     }
     public void show() {
