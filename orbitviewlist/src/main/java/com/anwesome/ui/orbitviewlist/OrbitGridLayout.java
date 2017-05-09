@@ -46,16 +46,16 @@ public class OrbitGridLayout extends ViewGroup {
         setMeasuredDimension(w,Math.max(newH+w/20,h));
     }
     public void onLayout(boolean reloaded,int a,int b,int w,int h) {
-        int x = w/10,y = w/10;
+        int x = w/20,y = w/10;
         for(int i=0;i<getChildCount();i++) {
             View child = getChildAt(i);
             child.layout(x,y,x+child.getMeasuredWidth(),y+child.getMeasuredWidth());
             if(i%2 == 1) {
-                x = w/10;
-                y += w/2+w/20;
+                x = w/20;
+                y += w/2+w/30;
             }
             else {
-                x += w/2+w/20;
+                x += w/2+w/30;
             }
         }
     }
